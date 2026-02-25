@@ -1,36 +1,31 @@
-diff --git a/package.json b/package.json
-index a51398c2acca1906351a5f0a0b0e55f6228f2297..f782ad57a0221d203f789437137281580fccb226 100644
---- a/package.json
-+++ b/package.json
-@@ -1,23 +1,28 @@
- {
-   "name": "cargoswift---on-demand-logistics",
-   "private": true,
-   "version": "0.0.0",
-   "type": "module",
-   "scripts": {
--    "dev": "vite",
-+    "apk:build:debug": "npm run build && npm run apk:prepare && cd android && ./gradlew assembleDebug",
-+    "apk:prepare": "if [ ! -d android ]; then npx cap add android; fi && npx cap sync android",
-     "build": "vite build",
-+    "dev": "vite",
-     "preview": "vite preview"
-   },
-   "dependencies": {
--    "react-dom": "^19.2.4",
-+    "@capacitor/android": "^6.2.0",
-+    "@capacitor/core": "^6.2.0",
-     "@google/genai": "^1.40.0",
-     "lucide-react": "^0.563.0",
--    "react": "^19.2.4"
-+    "react": "^19.2.4",
-+    "react-dom": "^19.2.4"
-   },
-   "devDependencies": {
-+    "@capacitor/cli": "^6.2.0",
-     "@types/node": "^22.14.0",
-     "@vitejs/plugin-react": "^5.0.0",
-     "typescript": "~5.8.2",
-     "vite": "^6.2.0"
-   }
- }
+{
+  "name": "cargoswift---on-demand-logistics",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "apk:build:debug": "npm run build && npm run apk:prepare && cd android && ./gradlew assembleDebug",
+    "apk:prepare": "if [ ! -d android ]; then npx cap add android; fi && npx cap sync android",
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react-dom": "^19.2.4",
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/core": "^6.2.0",
+    "@google/genai": "^1.40.0",
+    "lucide-react": "^0.563.0",
+    "react": "^19.2.4"
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0",
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
