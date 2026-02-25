@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "apk:build:debug": "npm run build && npm run apk:prepare && cd android && ./gradlew assembleDebug",
-    "apk:prepare": "if [ ! -d android ]; then npx cap add android; fi && npx cap sync android",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync-build": "npm run build && npx cap sync",
+    "apk:build:debug": "npm run sync-build && cd android && ./gradlew assembleDebug"
   },
   "dependencies": {
     "@capacitor/android": "^6.2.0",
