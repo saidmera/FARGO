@@ -8,8 +8,10 @@
     "apk:build:debug": "npm run build && npm run apk:prepare && cd android && ./gradlew assembleDebug",
     "apk:prepare": "if [ ! -d android ]; then npx cap add android; fi && npx cap sync android",
     "build": "vite build",
-    "dev": "vite",
     "preview": "vite preview"
+    "dev": "vite",
+    "preview": "vite preview",
+    "validate:package-json": "node -e \"JSON.parse(require('fs').readFileSync('package.json', 'utf8')); console.log('package.json is valid JSON')\""
   },
   "dependencies": {
     "react-dom": "^19.2.4",
