@@ -1,0 +1,8 @@
+{
+  "name": "CargoSwift - On-Demand Logistics",
+  "description": "A peer-to-peer delivery platform for commodities and heavy items with real-time tracking, VOIP, and chat.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ]
+}
