@@ -3,7 +3,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'com.cargoswift.app',
   appName: 'CargoSwift',
-  webDir: 'dist', // This tells Capacitor to look in Vite's output folder
+  webDir: 'dist',
   server: {
     androidScheme: 'https'
   }
