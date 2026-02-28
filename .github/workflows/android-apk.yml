@@ -3,13 +3,11 @@ name: Build Android APK
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build-apk:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -18,13 +16,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          # Removed cache to prevent the "lock file not found" error
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build and Sync Capacitor
-        # This triggers the 'apk:prepare' which runs 'vite build' then 'cap sync'
+      - name: Build and Sync
         run: npm run apk:prepare
 
       - name: Setup Java
@@ -41,8 +38,8 @@ jobs:
         working-directory: android
         run: ./gradlew assembleDebug
 
-      - name: Upload APK artifact
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-debug-apk
+          name: CargoSwift-Debug
           path: android/app/build/outputs/apk/debug/app-debug.apk
