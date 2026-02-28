@@ -2,25 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CargoSwift - Direct Transport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CargoSwift</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
-        body { 
-            font-family: 'Outfit', sans-serif; 
-            overscroll-behavior-y: contain;
-            background-color: #F2F2F2;
-        }
-        .indrive-yellow { background-color: #F7FF00; }
+        body { font-family: 'Outfit', sans-serif; background-color: #F2F2F2; margin: 0; padding: 0; }
         .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); }
-        .leaflet-container { background: #f8f9fa !important; }
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
     </style>
 </head>
-<body class="text-[#1A1A1A]">
+<body>
     <div id="root"></div>
     <script type="module" src="/index.ts"></script>
 </body>
