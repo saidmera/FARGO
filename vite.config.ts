@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: './', // CRITICAL: Fixes the white screen by using relative paths
+  base: './', // Ensures assets are loaded with relative paths inside the APK
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './'),
@@ -13,5 +13,6 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    sourcemap: false
   }
 });
