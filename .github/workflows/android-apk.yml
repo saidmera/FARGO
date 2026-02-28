@@ -18,21 +18,24 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build web app
-        run: npm run build
-
-      - name: Prepare Capacitor Android project
+      - name: Build and Sync Capacitor
+        # This triggers the 'apk:prepare' which runs 'vite build' then 'cap sync'
         run: npm run apk:prepare
 
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
+          distribution: 'temurin'
           java-version: '21'
+
+      - name: Make Gradle Executable
+        working-directory: android
+        run: chmod +x gradlew
 
       - name: Build debug APK
         working-directory: android
@@ -43,4 +46,3 @@ jobs:
         with:
           name: app-debug-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
-          if-no-files-found: error
